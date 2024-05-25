@@ -14,7 +14,7 @@ Task Handler is a Go-based microservice designed to manage tasks. It provides a 
 - **cURL**: For testing the endpoints.
 
 ## Project Structure
-
+```
 /task-handler
 │
 ├── cmd
@@ -57,7 +57,7 @@ Task Handler is a Go-based microservice designed to manage tasks. It provides a 
 │
 ├── go.mod
 └── go.sum
-
+```
 
 ## Local Setup
 
