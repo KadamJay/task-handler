@@ -159,6 +159,3 @@ Contributions are welcome! Please create an issue or submit a pull request with 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-
-This `README.md` provides a brief overview of the project, lists the technologies used, explains how to set up and run the project locally, and describes how to use the service's API endpoints. It also includes sections for contributing and licensing. This should give new users and developers a clear and concise guide to getting started with the project.
