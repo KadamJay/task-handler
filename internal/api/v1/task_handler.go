@@ -37,4 +37,12 @@ func (h *TaskHandler) CreateTask(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
+
+	result, err := h.Service.CreateTask(context.TODO(), task)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+
+	w.Header().Set("Content-Type", "applcation/json")
+	json.NewEncoder(w).Encode(result)
 }

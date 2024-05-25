@@ -41,8 +41,8 @@ func (s *Server) Start() {
 	taskHandler := v1.NewTaskHandler(taskService)
 
 	router := http.NewServeMux()
-	router.HandleFunc("/tasks", taskHandler.CreateTask)
-	router.HandleFunc("/task", taskHandler.GetTasks)
+	router.HandleFunc("/task", taskHandler.CreateTask)
+	router.HandleFunc("/tasks", taskHandler.GetTasks)
 
 	s.HTTPServer = &http.Server{
 		Addr:    s.config.Server.Port,
