@@ -15,9 +15,14 @@ type ServerConfig struct {
 	Port string `yaml:"port"`
 }
 
+type RedisConfig struct {
+	Addr string `yaml:"addr"`
+}
+
 type Config struct {
 	MongoDB MongoDBConfig `yaml:"mongodb"`
 	Server  ServerConfig  `yaml:"server"`
+	Redis   RedisConfig   `yaml:"redis"`
 }
 
 func LoadConfig(configPath string) *Config {
@@ -43,5 +48,8 @@ func overriderWithEnvVariable(config *Config) {
 
 	if port := os.Getenv("SERVER_PORT"); port != "" {
 		config.Server.Port = port
+	}
+	if addr := os.Getenv("REDIS_ADDR"); addr != "" {
+		config.Redis.Addr = addr
 	}
 }

@@ -3,3 +3,6 @@ mongodb:
 
 server:
   port: ":8080"
+
+redis:
+  addr: "localhost:6379"
