@@ -54,7 +54,7 @@ func (s *Server) Start() {
 	s.InitRedis()
 
 	taskRepo := repository.NewTaskRepository(db.Collection("tasks"))
-	taskService := service.NewTaskService(taskRepo)
+	taskService := service.NewTaskService(taskRepo, s.RedisClient)
 	taskHandler := v1.NewTaskHandler(taskService)
 
 	router := http.NewServeMux()

@@ -3,6 +3,7 @@ package v1
 import (
 	"context"
 	"encoding/json"
+	"log"
 	"net/http"
 	"task-handler/internal/service"
 	"task-handler/pkg/models"
@@ -21,6 +22,7 @@ func NewTaskHandler(service *service.TaskService) *TaskHandler {
 func (h *TaskHandler) GetTasks(w http.ResponseWriter, r *http.Request) {
 	tasks, err := h.Service.GetAllTasks(context.TODO())
 	if err != nil {
+		log.Fatal(err)
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
